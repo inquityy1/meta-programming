@@ -34,7 +34,7 @@ const company = {
 //		this.curEmployee++;
 //		return returnValue;
 //	},
-	getEmployee: function* employeeGenerator() {
+	[Symbol.iterator]: function* employeeGenerator() {
 //		let employee = company.next();
 
 //		while(!employee.done) {
@@ -56,17 +56,19 @@ const company = {
 //	employee = company.next();
 //}
 
-//for (const employee of company) {
-//	console.log(employee);
-//}
+for (const employee of company) {
+	console.log(employee);
+}
 
-const it = company.getEmployee();
+console.log([...company]);
 
-console.log(it.next());
-console.log(it.next());
-console.log(it.next());
-console.log(it.next());
-console.log(it.next());
+//const it = company.getEmployee();
+
+//console.log(it.next());
+//console.log(it.next());
+//console.log(it.next());
+//console.log(it.next());
+//console.log(it.next());
 	
 	
 	
